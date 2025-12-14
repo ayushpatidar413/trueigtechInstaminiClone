@@ -18,87 +18,37 @@ body {
   min-height: 100vh;
 }
 
-.btn-primary {
-  background-color: #0095f6;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+/* Custom utility classes using Tailwind's @apply */
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded-lg font-semibold border-none cursor-pointer transition-colors duration-200 hover:bg-blue-600 disabled:bg-blue-300 disabled:cursor-not-allowed;
+  }
 
-.btn-primary:hover {
-  background-color: #1877f2;
-}
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-lg font-semibold border-none cursor-pointer transition-colors duration-200 hover:bg-gray-200;
+  }
 
-.btn-primary:disabled {
-  background-color: #b2dffc;
-  cursor: not-allowed;
-}
+  .input-field {
+    @apply w-full px-3 py-2.5 border border-gray-300 rounded-md bg-gray-50 text-sm focus:outline-none focus:border-gray-400;
+  }
 
-.btn-secondary {
-  background-color: #efefef;
-  color: #262626;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
+  .card {
+    @apply bg-white border border-gray-200 rounded-lg;
+  }
 
-.btn-secondary:hover {
-  background-color: #dbdbdb;
-}
+  .link {
+    @apply text-blue-500 no-underline font-semibold hover:underline;
+  }
 
-.input-field {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #dbdbdb;
-  border-radius: 6px;
-  background-color: #fafafa;
-  font-size: 14px;
-}
+  .error-message {
+    @apply text-red-500 text-sm mt-2;
+  }
 
-.input-field:focus {
-  outline: none;
-  border-color: #a8a8a8;
-}
+  .avatar {
+    @apply w-8 h-8 rounded-full object-cover;
+  }
 
-.card {
-  background-color: white;
-  border: 1px solid #dbdbdb;
-  border-radius: 8px;
-}
-
-.link {
-  color: #0095f6;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.link:hover {
-  text-decoration: underline;
-}
-
-.error-message {
-  color: #ed4956;
-  font-size: 14px;
-  margin-top: 8px;
-}
-
-.avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.avatar-lg {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
+  .avatar-lg {
+    @apply w-36 h-36 rounded-full object-cover;
+  }
 }
